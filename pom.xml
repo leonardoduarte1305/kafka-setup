@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.leoduarte</groupId>
+    <artifactId>kafka-setup</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>kafka-setup</description>
+    <inceptionYear>2023</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Software License 1.0</name>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:${scm-provider}:${scm-url}/${scm-username}/${repository-name}.git</connection>
+        <developerConnection>
+            scm:${scm-provider}:${ssh-scm-connection}:${scm-username}/${repository-name}.git
+        </developerConnection>
+        <url>${scm-url}/${scm-username}/${repository-name}</url>
+        <tag>${project.version}</tag>
+    </scm>
+
+    <modules>
+        <module>library-kafka-consumer</module>
+        <module>library-kafka-producer</module>
+    </modules>
+
+    <properties>
+        <!-- ===================================================================== -->
+        <!-- =============== Personal properties and Local configs =============== -->
+        <!-- ===================================================================== -->
+
+        <scm-provider>git</scm-provider>
+        <scm-url>https://github.com</scm-url>
+        <scm-username>${settings-xml.scm-username}</scm-username>
+        <repository-name>api-transportes-spec</repository-name>
+        <ssh-scm-connection>git@github.com</ssh-scm-connection>
+
+        <java.version>17</java.version>
+        <encoding>UTF-8</encoding>
+
+        <project.build.indentSize>4</project.build.indentSize>
+        <project.build.lineLength>160</project.build.lineLength>
+        <project.build.os>unknown</project.build.os>
+        <project.build.arch>x86_64</project.build.arch>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.source>${encoding}</project.reporting.source>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.compiler.failOnWarning>false</maven.compiler.failOnWarning>
+        <maven.build.indentSize>4</maven.build.indentSize>
+        <maven.deploy.only>false</maven.deploy.only>
+
+        <skipITs>true</skipITs>
+    </properties>
+</project>
